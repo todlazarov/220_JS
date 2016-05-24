@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+   //Ex 1
+   var a = "outer";
+   function testScope() {
+     var a = "inner";
+     console.log(a);
+   }
+   console.log(a);
+   testScope();
+   console.log(a);
+   //"outer"
+   //"inner"
+   //"outer"
+//-------------------
+   //Ex 2
+   var a = "outer";
+   function testScope() {
+     a = "inner";
+     console.log(a);
+   }
+   console.log(a);
+   testScope();
+   console.log(a);
+   //outer
+   //inner
+   //inner
+//------------------
+   //Ex 3
+   var basket = "empty";
+
+   function goShopping() {
+     function shop1() {
+       basket = "tv";
+     }
+
+     console.log(basket);
+
+     function shop2() {
+       basket = "computer";
+     }
+
+     function shop3() {
+      var basket = "play station";
+      console.log(basket);
+     }
+
+     shop1();
+     shop2();
+     shop3();
+
+     console.log(basket);
+   }
+
+   goShopping();
+   //empty
+   //play station
+   //computer
+//-----------------
+   //Ex 4
+   console.log(a);
+
+   var a = 1;
+   //undefined
+//----------------
+   //Ex 5
+   console.log(a);
+   function hello() {
+     a = 1;
+   }
+   //Reference error
+//----------------
+   //Ex 6
+   function hello() {
+     a = "hello";
+   }
+   hello();
+   console.log(a);
+   //hello
+//----------------
+   //Ex 7
+   function hello() {
+     var a = "hello"
+   }
+   hello();
+   console.log(a);
+   //a is not defined
+  </script>
+</body>
+</html>

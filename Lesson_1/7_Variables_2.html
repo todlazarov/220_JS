@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+   //Ex 1
+   function say() {
+     if (false) {
+       var a = "hello from inside a block";
+     }
+     console.log(a);
+   }
+   say();
+   //undefined
+//-----------------
+   //Ex 2
+   function hello() {
+     a = 'hello';
+     console.log(a);
+     if (false) {
+       var a = 'hello again';
+     }
+   }
+   hello();
+   console.log(a);
+   //hello
+   //undefined because once hoisted, a is declared and now it has local scope, therefor not available to use in the outer scope(line 28)
+//-----------------
+   //Ex 3
+   var a = "hello";
+   for (var i = 0; i < 5; i++) {
+     var a = i;
+   }
+   console.log(a);
+   //4
+//-----------------
+   //Ex 4
+   var a = 1;
+   function foo() {
+     a = 2;
+     function bar() {
+       a = 3;
+       return 4;
+     }
+     return bar();
+   }
+   console.log(foo());
+   console.log(a);
+   //4
+   //3
+//-----------------
+   //Ex 5
+   a = "global"
+
+   function checkScope() {
+     var a = "local";
+     function nested() {
+       var a = "nested";
+       function supernested() {
+         a = "supernested";
+         return a;
+       }
+       return supernested();
+     }
+     return nested();
+   }
+   console.log(checkScope());
+   console.log(a);
+   //supernested
+   //global
+//-----------------
+   //Ex 6
+   var a = "outer";
+   var b = "outer";
+
+   console.log(a);
+   console.log(b);
+   setScope(a);
+   console.log(a);
+   console.log(b);
+
+   function setScope(foo) {
+    foo = "inner";
+    b = "inner";
+   }
+   //outer
+   //outer
+   //outer
+   //inner
+//-----------------
+   //Ex 7
+   var total = 50,
+       increment = 15;
+
+   function incrementBy(increment) {
+     total += increment;
+   }
+
+   console.log(total);
+   incrementBy(10);
+   console.log(total);
+   console.log(increment);
+   //50
+   //60
+   //15
+//-----------------
+   //Ex 8
+   var a = "outer";
+
+   console.log(a);
+   setScope(a);
+   console.log(a);
+
+   var setScope = function() {
+       a = "inner";
+   }
+   //outer
+   //error
+  </script>
+</body>
+</html>

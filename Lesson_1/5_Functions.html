@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+   //var temperatures = [20,1,35,15,9];
+
+   function average(arr) {
+     return sum(arr) / arr.length;
+   }
+
+   function sum(arr) {
+     var total = 0;
+     for (var i = 0; i < arr.length; i++) {
+       total += arr[i];
+     }
+     return total;
+   }
+
+   function fizzBuzz(num) {
+     while (num > 0) {
+       if (num % 15 == 0) {
+         console.log("FizzBuzz");
+       } else if (num % 5 == 0) {
+        console.log("Buzz");
+       } else if (num % 3 == 0) {
+        console.log("Fizz");
+       } else {
+        console.log(num);
+       }
+      num -= 1;
+     }
+   }
+
+   function random(max_num) {
+     return Math.ceil(Math.random() * max_num);
+   }
+   //console.log(random(10));
+   //console.log(average(temperatures));
+   //console.log(average([1,2,3,4,5]));
+   //fizzBuzz(100);
+  </script>
+</body>
+</html>

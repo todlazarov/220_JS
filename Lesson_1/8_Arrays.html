@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+   //1
+   var friends = ["Bob", "Josie", "Sam"];
+   var enemies = ["Bob", "Josie", "Sam"];
+   console.log(friends == enemies);
+//-----------------
+   //2
+   var friends_clone = friends;
+   console.log(friends_clone == friends);
+//-----------------
+   //3
+   function lastInArray(array) {
+     return array[array.length - 1];
+   }
+//-----------------
+   //4
+   var arr_1 = ["Steve", "Martha", "Pat"];
+   function rollCall(array) {
+     for (var i = 0; i < array.length; i++) {
+       console.log(array[i]);
+     }
+   }
+   rollCall(arr_1);
+//-----------------
+   //5
+   var numbers = [1, 2, 3, 4, 5];
+   function reverseOrder(array) {
+     var reversed = [];
+     var i = array.length - 1;
+     while (i >= 0) {
+       reversed.push(array[i]);
+       i--;
+     }
+     return reversed;
+   }
+   console.log(reverseOrder(numbers));
+//-----------------
+   //6
+   function findValue(num, array) {
+     var pos = -1;
+     for (var i = 0; i < array.length; i++) {
+       if (num == array[i]) {
+         pos = i;
+         break;
+       }
+     }
+     return pos
+   }
+   console.log(findValue(12, numbers));
+//-----------------
+   //7
+   function toString(array) {
+     var str = "";
+     for (var i = 0; i < array.length; i ++) {
+       str += array[i];
+     }
+     return str;
+   }
+   console.log(toString(numbers));
+  </script>
+</body>
+</html>

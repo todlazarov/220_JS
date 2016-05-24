@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+   //1
+   function firstElementOf(arr) {
+     return arr[0];
+   }
+   console.log(firstElementOf(["U", "S", "A"]));
+//-----------------
+   //2
+   function lastElementOf(arr) {
+     return arr[arr.length - 1];
+   }
+   console.log(lastElementOf(["U", "S", "A"]));
+//-----------------
+   //3
+   function nthElementOf(arr, index) {
+     return arr[index];
+   }
+//-----------------
+   //5
+   function firstNOf(arr, length) {
+     return arr.slice(0, length);
+   }
+//-----------------
+   //6 + 7
+   function lastNOf(arr, length) {
+     var idx = arr.length - length;
+     if (idx < 0) {
+       idx = 0;
+     }
+     return arr.slice(idx);
+   }
+   var digits = [4, 8, 15, 16, 23, 42];
+   console.log(lastNOf(digits, 3));
+//-----------------
+   //8
+   function endsOf(beginning_arr, ending_arr) {
+     return [beginning_arr[0], lastElementOf(ending_arr)];
+   }
+   console.log(endsOf([4,8,15], [16,23,42]));
+  </script>
+</body>
+</html>
