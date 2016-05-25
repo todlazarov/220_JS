@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <script>
+  	//1
+  	function radiansToDegrees(rads) {
+      return (rads * 180 ) / Math.PI;
+  	}
+  	//2
+  	var degrees = -180;
+  	console.log(Math.abs(degrees));
+  	//3
+  	console.log(Math.sqrt(16777216));
+  	//4
+  	console.log(Math.pow(16, 6));
+  	//5
+  	var a = 50.72,
+  	    b = 49.2,
+  	    c = 49.86;
+  	console.log(Math.floor(a));
+  	console.log(Math.ceil(b));
+  	console.log(Math.round(c));
+  	//6
+  	function randomNum(min, max) {
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+  	}
+  	console.log(randomNum(5, 10));
+  </script>
+</body>
+</html>
