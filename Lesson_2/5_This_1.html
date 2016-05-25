@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+    //1
+    function whatIsMyContext() {
+     return this;
+    }
+    //The context of the function is determined when the function is called
+//-----------------
+    //2
+    function whatIsMyContext() {
+      return this;
+    }
+    whatIsMyContext();
+    //In this case this is going to have context of global window object
+//-----------------
+    //3
+    function foo() {
+      function bar() {
+        function baz() {
+          console.log(this);
+        }
+        baz();
+      }
+      bar();
+    }
+    foo();
+    //This is going to have the context of window object
+//-----------------
+    //4
+    var obj = {
+      count: 2,
+      method: function() {
+        return this.count;
+      }
+    };
+    obj.method();
+    //This will point to obj
+//-----------------
+    //5
+    function foo() {
+      console.log(this.a);
+    }
+    var a = 2;
+    foo();
+    //It would log out 2
+//-----------------
+    //6
+    var a = 1;
+    function bar() {
+      console.log(this.a);
+    }
+    var obj = {
+      a: 2,
+      foo: bar,
+    };
+    obj.foo();
+    //It will log out 2
+//-----------------
+    //7
+    foo = {
+      a: 1,
+      bar: function() {
+        console.log(this.baz());
+      },
+      baz: function() {
+       return this;
+      }
+    }
+    foo.bar();
+    var qux = foo.bar;
+    qux();
+    //Object {a: 1}
+    //TypeError
+  </script>
+</body>
+</html>
