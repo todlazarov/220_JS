@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+    //1
+    var invoices = new Object();
+    invoices.foo = 130;
+    invoices.bar = 250;
+//=================
+    //2
+    var payments = {
+      foo: 80,
+      bar: 55
+    };
+//=================
+    //3
+    var payments_received = 0;
+    invoices.foo -= payments.foo;
+    invoices.bar -= payments.bar;
+    payments_received = payments.foo + payments.bar;
+    console.log(payments_received);
+//=================
+    //4
+    var remaining_due = 0;
+    for (var i in invoices) {
+      remaining_due += invoices[i];
+    }
+    console.log(remaining_due);
+//=================
+    //5
+    var second_invoices = Object.create(invoices);
+    console.log(second_invoices.foo);
+    invoices.foo = 0;
+    console.log(second_invoices.foo);
+//=================
+    //6
+    var Invoices = {
+      foo: 130,
+      bar: 250
+    };
+//=================
+    //7
+    var outstanding_invoices = [];
+    outstanding_invoices.push(Object.create(Invoices));
+    outstanding_invoices.push(Object.create(Invoices));
+    console.log(outstanding_invoices);
+//=================
+    //8
+    Object.freeze(Invoices);
+    console.log(Invoices.foo);
+    Invoices.foo = 9999;
+    console.log(Invoices.foo);
+//=================
+    //9
+    outstanding_invoices[0].foo = 0;
+    console.log(outstanding_invoices[0].foo);
+//=================
+    //10
+    console.log(Object.isFrozen(Invoices));
+    console.log(Object.isFrozen(outstanding_invoices[0]));
+//=================
+    //11
+    function newInvoices() {
+      return {
+        foo: 130,
+        bar: 250
+      };
+    }
+    var outstanding_invoices1 = [];
+    outstanding_invoices1.push(newInvoices());
+    outstanding_invoices1.push(newInvoices());
+//=================
+    //12
+    outstanding_invoices1[0].foo = 0;
+    console.log(outstanding_invoices1[0].foo);
+    console.log(outstanding_invoices1[1].foo);
+//=================
+    //13
+    function newInvoice(foo, bar) {
+      return {
+        foo: isNaN(foo) ? 130 : foo,
+        bar: isNaN(bar) ? 250 : bar
+      }
+    };
+    oustanding_invoices.push(newInvoice(undefind, 400));
+//=================
+    //14 + 15
+    function newInvoice1(client) {
+      client = client || {};
+      return {
+        foo: client.foo || 130,
+        bar: client.bar || 250
+      }
+      invoices.getTotal = function() {
+        return invoices.foo + invoices.bar;
+      }
+      return invoices;
+    };
+    outstanding_invoices.push(newInvoice());
+    console.log(outstanding_invoices[2].getTotal());
+  </script>
+</body>
+</html>
