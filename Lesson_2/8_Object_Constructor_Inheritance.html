@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+    function Vehicle() {
+      if (!(this instanceof Vehicle)) {
+        return new Vehicle();
+      }
+      return this;
+    };
+    Vehicle.prototype = {
+      doors: 4,
+      wheels: 4
+    };
+    var sedan = new Vehicle();
+    var coupe = new Vehicle();
+
+    coupe.doors = 2;
+
+    function Coupe() {
+      var o = this;
+      if (!(o instanceof Coupe)) {
+        return new Coupe();
+      }
+      o.doors = 2;
+      return o;
+    }
+    Coupe.prototype = new Vehicle();
+
+    function Motorcycle() {
+      var o = this;
+      if (!(o instanceof Motorcycle)) {
+        return new Motorcycle();
+      }
+      o.doors = 0;
+      o.wheels = 2;
+      return o;
+    }
+    Motorcycle.prototype = new Vehicle();
+
+    var crx = new Coupe();
+    var suzuki = new Motorcycle();
+
+    function Sedan() {
+    }
+    Sedan.prototype = Object.create(Vehicle.prototype);
+    var lesabre = new Sedan();
+  </script>
+</body>
+</html>
