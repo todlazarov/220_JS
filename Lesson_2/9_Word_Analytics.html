@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="#">
+</head>
+<body>
+  <script>
+    var word_object = {},
+        most_frequent;
+
+    var input_text = "In the midway of this our mortal life,\
+    I found me in a gloomy wood, astray\
+    Gone from the path direct: and e'en to tell\
+    It were no easy task, how savage wild\
+    That forest, how robust and rough its growth,\
+    Which to remember only, my dismay\
+    Renews, in bitterness not far from death.\
+    Yet to discourse of what there good befell,\
+    All else will I relate discover'd there.\
+    How first I enter'd it I scarce can say,\
+    Such sleepy dullness in that instant weigh'd\
+    My senses down, when the true path I left,\
+    But when a mountain's foot I reach'd, where clos'd\
+    The valley, that had pierc'd my heart with dread,\
+    I look'd aloft, and saw his shoulders broad\
+    Already vested with that planet's beam,\
+    Who leads all wanderers safe through every way.";
+
+    input_text = input_text.replace(/,/g, "").replace(/\./g, "").replace(/'/g, "").replace(/:/g, "").replace(/\s+/g, " ");
+
+    input_text = input_text.split(" ");
+
+    for (var i = 0; i < input_text.length; i++) {
+      if (word_object.hasOwnProperty(input_text[i])) {
+        word_object[input_text[i]]++;
+      } else {
+        word_object[input_text[i]] = 1;
+      }
+    }
+
+    for (var key in word_object) {
+      if ((!most_frequent) || word_object[key] > word_object[most_frequent]) {
+        most_frequent = key;
+      }
+    }
+
+    console.log("The most frequently occuring word is " + most_frequent + " and it appears " + word_object[most_frequent] + " times.");
+    console.log("The total word count is " + input_text.length);
+
+  </script>
+</body>
+</html>
