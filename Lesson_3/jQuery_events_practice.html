@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <main>
+    <form action="" method="get">
+      <fieldset>
+        <h1>Type a key to toggle the accordion with</h1>
+        <input type="text" id="key" name="key" maxlength="1" />
+        <input type="submit" value="Set" />
+      </fieldset>
+    </form>
+    <p><a href="#">Toggle accordion</a></p>
+    <div id="accordion">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+  </main>
+  <script>
+    $(function() {
+      $("form").submit(function(e) {
+        e.preventDefault();
+        var character = $("#key").val(),
+            character_code = character.charCodeAt(0);
+
+        $(document).off("keypress").keypress(function(e) {
+          if (e.which !== character_code) { return; }
+          $("a").trigger("click");
+        });
+      });
+
+      $("a").click(function(e) {
+        e.preventDefault();
+        $("#accordion").slideToggle();
+      });
+    });
+  </script>
+</body>
+</html>
