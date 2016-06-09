@@ -1,0 +1,21 @@
+body {
+  font: normal 16px Helvetica;
+  background: #66001F;
+  height: 100%;
+  min-height: 100%;
+  margin-top: 40px;
+}
+fieldset {
+  width: 500px;
+  margin: 0 auto;
+  background: #fff;
+}
+p,
+input,
+select {
+  margin: 10px;
+}
+p {
+  font-size: 28px;
+  color: blue;
+}
