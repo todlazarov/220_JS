@@ -1,0 +1,70 @@
+body {
+  background: #00B289;
+  color: #00B289;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  padding: 45px 0;
+}
+main {
+  width: 450px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  color: #FF632F;
+  margin-top: 40px;
+}
+h2 {
+}
+label,
+input {
+  display: block;
+  font-weight: bold;
+}
+input {
+  margin-bottom: 15px;
+}
+label {
+  margin-bottom: 5px;
+}
+fieldset {
+  border: none;
+  padding: 0;
+}
+input[type="text"] {
+  width: 400px;
+  height: 50px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-style: normal;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 5px #9ecaed;
+}
+#qty {
+  width: 75px;
+}
+input[type="submit"] {
+  width: 400px;
+  height: 50px;
+  margin: 25px 0 0 0;
+  background: #B2380F;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #fff;
+}
+li {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+}
+li + li {
+  border-top: 1px solid #dadada;
+}
