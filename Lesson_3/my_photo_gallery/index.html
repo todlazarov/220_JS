@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Photo Gallery</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="photo_gallery.js"></script>
+</head>
+<body>
+  <main>
+    <h1>My Photo Gallery</h1>
+    <div id="slideshow">
+      <figure style="display: block;">
+        <img src="http://placehold.it/1200x900" alt="placeholder photo">
+        <figcaption>Example photo</figcaption>
+      </figure>
+      <figure style="display: none;">
+        <img src="http://placehold.it/1200x900/fff/333" alt="placeholder photo">
+        <figcaption>Example photo</figcaption>
+      </figure>
+      <figure style="display: none;">
+        <img src="http://placehold.it/1200x900/66cc33/f0f0f0" alt="placeholder photo">
+        <figcaption>Example photo</figcaption>
+      </figure>
+      <figure style="display: none;">
+        <img src="http://placehold.it/1200x900/993535/aaa" alt="placeholder photo">
+        <figcaption>Example photo</figcaption>
+      </figure>
+      <ul>
+        <li class="active">
+          <a href="#">
+            <img src="http://placehold.it/1200x900" alt="photo">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="http://placehold.it/1200x900/fff/333" alt="photo">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="http://placehold.it/1200x900/66cc33/f0f0f0" alt="photo">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="http://placehold.it/1200x900/993535/aaa" alt="photo">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
