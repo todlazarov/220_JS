@@ -52,7 +52,7 @@
     <figure data-id="{{id}}">
       <img src="{{src}}" />
       <figcaption>{{caption}}</figcaption>
-    <figure>
+    </figure>
     {{/each}}
   </script>
 
@@ -61,7 +61,7 @@
     <p><time>Taken on {{created_at}}</time></p>
     <div class="actions">
       <a href="/photos/like" data-id="{{id}}" data-property="likes" class="button like">
-        &#9825;
+        ♡
         {{#if likes}}
         {{likes}}
         {{else}}
@@ -69,8 +69,8 @@
         {{/if}}
         Likes
       </a>
-      <a href="/photos/favorite" data-id="{{id}}" data-property="favorites" class="button favorite"
-        &#9734;
+      <a href="/photos/favorite" data-id="{{id}}" data-property="favorites" class="button favorite">
+        ☆
         {{#if favorites}}
         {{favorites}}
         {{else}}

@@ -94,10 +94,10 @@ a.favorite {
   position: absolute;
   top: 50%;
   z-index: 2;
-  widthL 48px;
+  width: 48px;
   height: 80px;
   margin-top: -40px;
-  text-indent: -8685px;
+  text-indent: -9999px;
   background: transparent url("../images/icon_pager.png") 0 0 no-repeat;
 }
 
